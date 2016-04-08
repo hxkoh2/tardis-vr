@@ -7,6 +7,7 @@ git pull
 ```
 
 # End
+Save and close the Unity scene and project before executing the following commands:
 ```
 git add .
 git commit -m "message about what you changed"
