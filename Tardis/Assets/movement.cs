@@ -29,11 +29,15 @@ public class movement : MonoBehaviour {
 
         if (Input.GetAxis("H2") < -0.2)
         {
-            transform.RotateAround(transform.position, transform.up, Time.deltaTime * -15);
+            transform.RotateAround(transform.position, transform.up, Time.deltaTime * -30);
+            if (Input.GetAxis("H2") < -0.8)
+                transform.RotateAround(transform.position, transform.up, Time.deltaTime * -55);
         }
         else if (Input.GetAxis("H2") > 0.2)
         {
-            transform.RotateAround(transform.position, transform.up, Time.deltaTime * 15);
+            transform.RotateAround(transform.position, transform.up, Time.deltaTime * 30);
+            if (Input.GetAxis("H2") > 0.8)
+                transform.RotateAround(transform.position, transform.up, Time.deltaTime * 55);
         }
     }
 }
