@@ -4,42 +4,34 @@ using System.Collections;
 public class movement : MonoBehaviour {
     // Use this for initialization
     Rigidbody rb;
+    CharacterController controller;
+    TerrainData terrainData;
 	void Start () {
+        //rb = GetComponent<Collider>().attachedRigidbody;
+        //controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("Horizontal") < -0.2)
+        Vector3 newPosition = transform.position;
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2)
         {
-            rb.MovePosition(transform.position - transform.right * .05f);
-        }
-        else if (Input.GetAxis("Horizontal") > 0.2)
-        {
-            rb.MovePosition(transform.position + transform.right * .05f);
+            newPosition += transform.right * Input.GetAxis("Horizontal") * .05f;
         }
 
-        if (Input.GetAxis("Vertical") < -0.2)
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2)
         {
-            rb.MovePosition(transform.position - transform.forward*.05f);
-        }
-        else if (Input.GetAxis("Vertical") > 0.2)
-        {
-            rb.MovePosition(transform.position + transform.forward*.05f);
+            newPosition += transform.forward * Input.GetAxis("Vertical") * .05f;
         }
 
+        rb.MovePosition(newPosition);
+       // transform.position = newPosition;
 
-        if (Input.GetAxis("H2") < -0.2)
+        if (Mathf.Abs(Input.GetAxis("H2")) > 0.2)
         {
-            transform.RotateAround(transform.position, transform.up, Time.deltaTime * -30);
-            if (Input.GetAxis("H2") < -0.8)
-                transform.RotateAround(transform.position, transform.up, Time.deltaTime * -55);
+            transform.RotateAround(transform.position, transform.up, Time.deltaTime * Input.GetAxis("H2") * 20);
         }
-        else if (Input.GetAxis("H2") > 0.2)
-        {
-            transform.RotateAround(transform.position, transform.up, Time.deltaTime * 30);
-            if (Input.GetAxis("H2") > 0.8)
-                transform.RotateAround(transform.position, transform.up, Time.deltaTime * 55);
-        }
+
     }
 }
