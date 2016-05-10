@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Tardis-Scene.unity
+- path: Assets/mars.unity
   isLoaded: 1
   isActive: 1

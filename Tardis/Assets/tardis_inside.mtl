@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd U:\PortableGit\tardis-blender-model\textures\2s7gl89.jpg
+map_Kd U:\PortableGit\tardis-blender-model\textures\TRU - CONTROL PANEL COVER-1.jpg
 
 newmtl Material.001
 Ns 96.078431
@@ -21,9 +21,10 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd U:\PortableGit\tardis-blender-model\textures\tardis_interior.png
+map_Kd U:\PortableGit\tardis-blender-model\Documents\tardis_interior.png
+map_Bump  U:\\PortableGit\\tardis-blender-model\\textures\\tardis_interior_bump.png
 
-newmtl Material.001_Untitled
+newmtl Material.001_tardis_interior.png
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
@@ -32,7 +33,8 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd U:\PortableGit\tardis-blender-model\Documents\tardis_interior.png
+map_Kd U:\PortableGit\tardis-blender-model\textures\tardis_interior.png
+map_Bump  U:\\PortableGit\\tardis-blender-model\\textures\\tardis_interior_bump.png
 
 newmtl Material.002
 Ns 96.078431
@@ -44,6 +46,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd U:\PortableGit\tardis-blender-model\textures\mesh.jpg
+map_Bump  U:\\PortableGit\\tardis-blender-model\\textures\\mesh_bump.jpg
 
 newmtl Material.007
 Ns 96.078431
@@ -54,6 +57,17 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 0.500000
 illum 2
+
+newmtl Material_2s7gl89.jpg.001
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd U:\PortableGit\tardis-blender-model\textures\2s7gl89.jpg
 
 newmtl Material_51d404508a5790cfa5f1106c5a7bc12a.jpg.001
 Ns 96.078431
@@ -75,17 +89,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-
-newmtl Material_TRU_-_CONTROL_PANEL_COVER-1.jpg.001
-Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-map_Kd U:\PortableGit\tardis-blender-model\textures\TRU - CONTROL PANEL COVER-1.jpg
 
 newmtl Material_altaerion_panel.jpg.001
 Ns 96.078431

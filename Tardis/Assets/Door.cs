@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
     public GameObject otherPortal;
@@ -8,14 +9,28 @@ public class Door : MonoBehaviour {
     GameObject outsideCamera;
     GameObject insideCamera;
     bool world;
+    bool starship;
+    static Vector3 prevPosition = new Vector3(0,0,0);
+    static bool startGame = true;
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("hit start");
         player = GameObject.Find("Cube");
         rigidbody = GameObject.Find("Cube").GetComponent<Rigidbody>();
         outsideCamera = GameObject.Find("OutsideCamera");
         insideCamera = GameObject.Find("InsideCamera");
         world = true;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            starship = true;
+        else
+            starship = false;
+        Debug.Log(prevPosition);
+        if(!startGame)
+        {
+            player.transform.position = GameObject.Find("tardis_inside").transform.position + prevPosition;
+            rigidbody.isKinematic = true;
+        }
 	}
 	
 	// Update is called once per frame
@@ -32,13 +47,21 @@ public class Door : MonoBehaviour {
             Debug.Log("changing outside camera");
             camera = outsideCamera;
         }
-        /*float angle = 0.0F;
-        Vector3 axis = Vector3.zero;
-        Quaternion.LookRotation(transform.position - player.transform.position).ToAngleAxis(out angle, out axis);
-        camera.transform.Rotate(axis, angle);*/
+       
         camera.transform.rotation = Quaternion.LookRotation(transform.forward - player.transform.forward - player.transform.GetChild(0).forward);
         camera.GetComponent<Camera>().fieldOfView = Mathf.Min(133, Mathf.Max(70, 150 - 8*(Mathf.Abs((transform.position - player.transform.position).magnitude))));
-        Debug.Log("position " + (150 - 8 * (Mathf.Abs((transform.position - player.transform.position).magnitude))));
+
+        if (Input.GetKeyDown("j") && player.transform.position.y < 0)
+        {
+            Debug.Log("change scene");
+            startGame = false;
+            prevPosition = - GameObject.Find("tardis_inside").transform.position + player.transform.position;
+            Debug.Log(prevPosition);
+            if(starship)
+                SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
+            else
+                SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -56,7 +79,6 @@ public class Door : MonoBehaviour {
             {
                 other.transform.position = otherPortal.transform.position + otherPortal.transform.forward * 2 + 0.5f * otherPortal.transform.up;
             }
-            //other.transform.rotation = other.transform.rotation;
             other.transform.Rotate(0, 180, 0);
         }
     }
