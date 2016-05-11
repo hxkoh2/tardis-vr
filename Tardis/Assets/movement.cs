@@ -6,14 +6,34 @@ public class movement : MonoBehaviour {
     Rigidbody rb;
     CharacterController controller;
     TerrainData terrainData;
+    Transform camera;
+    public GameObject canvas;
+    bool menu = true;
+
 	void Start () {
         //rb = GetComponent<Collider>().attachedRigidbody;
         //controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+        camera = transform.Find("Camera");
+        canvas.transform.position = transform.position + camera.forward * 2.5f + Vector3.up;
+        canvas.transform.rotation = camera.rotation * transform.rotation;
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        // turn on canvas
+        if (Input.GetButtonDown("Fire2"))
+        {
+            menu = !menu;
+            if (menu) {
+                canvas.transform.position = transform.position + camera.forward * 2.5f + Vector3.up;
+                canvas.transform.rotation = camera.rotation * transform.rotation;
+            }
+
+            canvas.SetActive(menu);
+        } 
+
         Vector3 newPosition = transform.position;
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2)
         {
@@ -30,6 +50,7 @@ public class movement : MonoBehaviour {
 
         if (Mathf.Abs(Input.GetAxis("H2")) > 0.2)
         {
+            Debug.Log("rotating");
             transform.RotateAround(transform.position, transform.up, Time.deltaTime * Input.GetAxis("H2") * 20);
         }
 

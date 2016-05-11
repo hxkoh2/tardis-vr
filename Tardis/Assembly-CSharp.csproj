@@ -78,6 +78,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRTrackerBounds.cs" />
+     <Compile Include="Assets\Reset.cs" />
      <Compile Include="Assets\RunTrigger.cs" />
      <Compile Include="Assets\Standard Assetsq\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
      <Compile Include="Assets\Standard Assetsq\CrossPlatformInput\Scripts\ButtonHandler.cs" />

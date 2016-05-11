@@ -1,12 +1,13 @@
 ﻿#pragma strict
 
+var opened = 0;
 
 function OnTriggerEnter (obj : Collider) {
-	var thedoor = gameObject.FindWithTag("SF_Door");
-	thedoor.GetComponent.<Animation>().Play("open");
-}
-
-function OnTriggerExit (obj : Collider) {
-	var thedoor = gameObject.FindWithTag("SF_Door");
-	thedoor.GetComponent.<Animation>().Play("close");
+    if(opened == 0)
+    {
+        var thedoor = gameObject.FindWithTag("SF_Door");
+        thedoor.GetComponent.<Animation>().Play("open");
+        opened = 1;
+    }
+	
 }

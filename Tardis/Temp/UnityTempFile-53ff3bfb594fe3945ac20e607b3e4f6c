@@ -1,0 +1,175 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-r:"C:/Program Files/Unity/Editor/Data\Managed/Mono.Cecil.dll"
+-r:"C:\Program Files\Unity\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll"
+-r:"C:\Program Files\Unity\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Common.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll"
+-define:UNITY_5_3_1
+-define:UNITY_5_3
+-define:UNITY_5
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_SPRITE_POLYGON
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:INCLUDE_DIRECTX12
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
+-define:ENABLE_EDITOR_TESTS_RUNNER
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_LOG_MIXED_STACKTRACE
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:CROSS_PLATFORM_INPUT
+Assets/BoneCrack.cs
+Assets/CollisionHandler.cs
+Assets/DecalSystem/DecalSystem/Decal.cs
+Assets/Door.cs
+Assets/DoubleTrigger.cs
+Assets/OVR/Moonlight/Scripts/OVRDebugHeadController.cs
+Assets/OVR/Moonlight/Scripts/OVROverlay.cs
+Assets/OVR/Moonlight/Scripts/OVRPlatformMenu.cs
+Assets/OVR/Moonlight/Scripts/OVRTouchpad.cs
+Assets/OVR/Moonlight/Scripts/OVRVolumeControl.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRChromaticAberration.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRDebugGraph.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRInputControl.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRModeParms.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRMonoscopic.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRResetOrientation.cs
+Assets/OVR/Moonlight/Scripts/Utils/OVRWaitCursor.cs
+Assets/OVR/Scripts/OVRCameraRig.cs
+Assets/OVR/Scripts/OVRCommon.cs
+Assets/OVR/Scripts/OVRDisplay.cs
+Assets/OVR/Scripts/OVRInput.cs
+Assets/OVR/Scripts/OVRManager.cs
+Assets/OVR/Scripts/OVROnCompleteListener.cs
+Assets/OVR/Scripts/OVRPlugin.cs
+Assets/OVR/Scripts/OVRProfile.cs
+Assets/OVR/Scripts/OVRTracker.cs
+Assets/OVR/Scripts/Util/OVRDebugInfo.cs
+Assets/OVR/Scripts/Util/OVRGamepadController.cs
+Assets/OVR/Scripts/Util/OVRGridCube.cs
+Assets/OVR/Scripts/Util/OVRPlayerController.cs
+Assets/OVR/Scripts/Util/OVRSceneSampleController.cs
+Assets/OVR/Scripts/Util/OVRScreenFade.cs
+Assets/OVR/Scripts/Util/OVRTrackerBounds.cs
+Assets/Reset.cs
+Assets/RunTrigger.cs
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/AxisTouchButton.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/ButtonHandler.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/InputAxisScrollbar.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/Joystick.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/MobileControlRig.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/TiltInput.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/TouchPad.cs"
+"Assets/Standard Assetsq/CrossPlatformInput/Scripts/VirtualInput.cs"
+"Assets/Standard Assetsq/Environment/Water (Basic)/Scripts/WaterBasic.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/Displace.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/GerstnerDisplace.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/MeshContainer.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/PlanarReflection.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/SpecularLighting.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/Water.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/WaterBase.cs"
+"Assets/Standard Assetsq/Environment/Water/Water/Scripts/WaterTile.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/AfterburnerPhysicsForce.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/ExplosionFireAndDebris.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/ExplosionPhysicsForce.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/Explosive.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/ExtinguishableParticleSystem.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/FireLight.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/Hose.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/ParticleSystemMultiplier.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/SmokeParticles.cs"
+"Assets/Standard Assetsq/ParticleSystems/Scripts/WaterHoseParticles.cs"
+"Assets/Standard Assetsq/Utility/ActivateTrigger.cs"
+"Assets/Standard Assetsq/Utility/AutoMobileShaderSwitch.cs"
+"Assets/Standard Assetsq/Utility/AutoMoveAndRotate.cs"
+"Assets/Standard Assetsq/Utility/CameraRefocus.cs"
+"Assets/Standard Assetsq/Utility/CurveControlledBob.cs"
+"Assets/Standard Assetsq/Utility/DragRigidbody.cs"
+"Assets/Standard Assetsq/Utility/DynamicShadowSettings.cs"
+"Assets/Standard Assetsq/Utility/EventSystemChecker.cs"
+"Assets/Standard Assetsq/Utility/FOVKick.cs"
+"Assets/Standard Assetsq/Utility/FPSCounter.cs"
+"Assets/Standard Assetsq/Utility/FollowTarget.cs"
+"Assets/Standard Assetsq/Utility/ForcedReset.cs"
+"Assets/Standard Assetsq/Utility/LerpControlledBob.cs"
+"Assets/Standard Assetsq/Utility/ObjectResetter.cs"
+"Assets/Standard Assetsq/Utility/ParticleSystemDestroyer.cs"
+"Assets/Standard Assetsq/Utility/PlatformSpecificContent.cs"
+"Assets/Standard Assetsq/Utility/SimpleActivatorMenu.cs"
+"Assets/Standard Assetsq/Utility/SimpleMouseRotator.cs"
+"Assets/Standard Assetsq/Utility/SmoothFollow.cs"
+"Assets/Standard Assetsq/Utility/TimedObjectActivator.cs"
+"Assets/Standard Assetsq/Utility/TimedObjectDestructor.cs"
+"Assets/Standard Assetsq/Utility/WaypointCircuit.cs"
+"Assets/Standard Assetsq/Utility/WaypointProgressTracker.cs"
+Assets/movement.cs
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"

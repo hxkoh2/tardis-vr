@@ -12,6 +12,7 @@ public class Door : MonoBehaviour {
     bool starship;
     static Vector3 prevPosition = new Vector3(0,0,0);
     static bool startGame = true;
+    static Quaternion prevRotation = new Quaternion(0, 0, 0, 0);
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +26,10 @@ public class Door : MonoBehaviour {
             starship = true;
         else
             starship = false;
-        Debug.Log(prevPosition);
         if(!startGame)
         {
             player.transform.position = GameObject.Find("tardis_inside").transform.position + prevPosition;
+            player.transform.rotation = prevRotation;
             rigidbody.isKinematic = true;
         }
 	}
@@ -37,30 +38,35 @@ public class Door : MonoBehaviour {
 	void Update () {
         world = rigidbody.position.y >= 0;
         GameObject camera;
+        GameObject otherCamera;
         if (world)
         {
-            Debug.Log("changing inside camera");
             camera = insideCamera;
+            otherCamera = outsideCamera;
         }
         else
         {
-            Debug.Log("changing outside camera");
             camera = outsideCamera;
+            otherCamera = insideCamera;
         }
        
         camera.transform.rotation = Quaternion.LookRotation(transform.forward - player.transform.forward - player.transform.GetChild(0).forward);
-        camera.GetComponent<Camera>().fieldOfView = Mathf.Min(133, Mathf.Max(70, 150 - 8*(Mathf.Abs((transform.position - player.transform.position).magnitude))));
-
+        //camera.GetComponent<Camera>().fieldOfView = Mathf.Min(133, Mathf.Max(70, 150 - 8*(Mathf.Abs((otherCamera.transform.position - player.transform.position).magnitude))));
         if (Input.GetKeyDown("j") && player.transform.position.y < 0)
         {
-            Debug.Log("change scene");
             startGame = false;
             prevPosition = - GameObject.Find("tardis_inside").transform.position + player.transform.position;
-            Debug.Log(prevPosition);
-            if(starship)
+            prevRotation = player.transform.rotation;
+            if (starship)
+            {
                 SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
+                SceneManager.UnloadScene(0);
+            }
             else
+            {
                 SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+                SceneManager.UnloadScene(1);
+            }
         }
     }
 
@@ -70,14 +76,15 @@ public class Door : MonoBehaviour {
         {
             rigidbody.isKinematic = !rigidbody.isKinematic;
             world = rigidbody.position.y < 0;
-            Debug.Log(world);
             if (world)
             {
                 other.transform.position = otherPortal.transform.position + otherPortal.transform.forward * 2 - otherPortal.transform.up;
             }
             if (!world)
             {
-                other.transform.position = otherPortal.transform.position + otherPortal.transform.forward * 2 + 0.5f * otherPortal.transform.up;
+                other.transform.position = otherPortal.transform.position + otherPortal.transform.forward;
+                other.transform.position = new Vector3(other.transform.position.x, - 53.1f, other.transform.position.z);
+                other.transform.rotation = new Quaternion(0, 0, 0, 1);
             }
             other.transform.Rotate(0, 180, 0);
         }

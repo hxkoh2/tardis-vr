@@ -20,10 +20,10 @@ public class DoubleTrigger : MonoBehaviour {
 
     void OnTriggerEnter()
     {
-        triggeredBox.GetComponent<Rigidbody>().useGravity = true;
+        triggeredBox.SetActive(true);
         explosion.Play();
         gameObject.GetComponent<AudioSource>().Play();
-        StartCoroutine(TimeDelay(1.7f));
+        StartCoroutine(TimeDelay(0.5f));
         
        
     }
@@ -36,6 +36,7 @@ public class DoubleTrigger : MonoBehaviour {
         runner2.GetComponent<Animation>().Play();
         runner2.GetComponent<AudioSource>().Play();
         explosion.Stop();
+        triggeredBox.SetActive(false);
         Destroy(gameObject);
     }
 
