@@ -14,8 +14,11 @@ public class Door : MonoBehaviour {
     static bool startGame = true;
     static Quaternion prevRotation = new Quaternion(0, 0, 0, 0);
 
-	// Use this for initialization
-	void Start () {
+    GameObject camera;
+    GameObject otherCamera;
+
+    // Use this for initialization
+    void Start () {
         Debug.Log("hit start");
         player = GameObject.Find("Cube");
         rigidbody = GameObject.Find("Cube").GetComponent<Rigidbody>();
@@ -37,8 +40,7 @@ public class Door : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         world = rigidbody.position.y >= 0;
-        GameObject camera;
-        GameObject otherCamera;
+        
         if (world)
         {
             camera = insideCamera;
@@ -51,8 +53,8 @@ public class Door : MonoBehaviour {
         }
        
         camera.transform.rotation = Quaternion.LookRotation(transform.forward - player.transform.forward - player.transform.GetChild(0).forward);
-        //camera.GetComponent<Camera>().fieldOfView = Mathf.Min(133, Mathf.Max(70, 150 - 8*(Mathf.Abs((otherCamera.transform.position - player.transform.position).magnitude))));
-        if (Input.GetKeyDown("j") && player.transform.position.y < 0)
+        camera.GetComponent<Camera>().fieldOfView = Mathf.Min(133, Mathf.Max(70, 120 - 8*(Mathf.Abs((otherCamera.transform.position - player.transform.position).magnitude))));
+        if (Input.GetButtonDown("Fire1") && player.transform.position.y < 0)
         {
             startGame = false;
             prevPosition = - GameObject.Find("tardis_inside").transform.position + player.transform.position;
@@ -79,14 +81,16 @@ public class Door : MonoBehaviour {
             if (world)
             {
                 other.transform.position = otherPortal.transform.position + otherPortal.transform.forward * 2 - otherPortal.transform.up;
+                
             }
             if (!world)
             {
-                other.transform.position = otherPortal.transform.position + otherPortal.transform.forward;
+                other.transform.position = otherPortal.transform.position + 1.5f* otherPortal.transform.forward;
                 other.transform.position = new Vector3(other.transform.position.x, - 53.1f, other.transform.position.z);
-                other.transform.rotation = new Quaternion(0, 0, 0, 1);
             }
+
             other.transform.Rotate(0, 180, 0);
+            other.transform.rotation = Quaternion.LookRotation(other.transform.forward, otherPortal.transform.up);
         }
     }
 }

@@ -133,6 +133,7 @@
      <Compile Include="Assets\Standard Assetsq\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Standard Assetsq\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Standard Assetsq\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\domeCollider.cs" />
      <Compile Include="Assets\movement.cs" />
      <None Include="Assets\OVR\Moonlight\Shaders\OVRColorRampAlpha.shader" />
      <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />

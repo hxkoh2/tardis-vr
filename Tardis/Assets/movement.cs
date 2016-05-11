@@ -8,7 +8,8 @@ public class movement : MonoBehaviour {
     TerrainData terrainData;
     Transform camera;
     public GameObject canvas;
-    bool menu = true;
+    static bool menu = true;
+    GameObject inside;
 
 	void Start () {
         //rb = GetComponent<Collider>().attachedRigidbody;
@@ -16,7 +17,9 @@ public class movement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         camera = transform.Find("Camera");
         canvas.transform.position = transform.position + camera.forward * 2.5f + Vector3.up;
-        canvas.transform.rotation = camera.rotation * transform.rotation;
+        canvas.transform.rotation = camera.rotation;
+        canvas.SetActive(menu);
+        inside = GameObject.Find("Inside");
     }
 	
 	// Update is called once per frame
@@ -28,25 +31,29 @@ public class movement : MonoBehaviour {
             menu = !menu;
             if (menu) {
                 canvas.transform.position = transform.position + camera.forward * 2.5f + Vector3.up;
-                canvas.transform.rotation = camera.rotation * transform.rotation;
+                canvas.transform.rotation = camera.rotation;
             }
 
             canvas.SetActive(menu);
-        } 
+        }
+
+        //if (domeCollider.colliding)
+       //     return;
 
         Vector3 newPosition = transform.position;
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2)
         {
-            newPosition += transform.right * Input.GetAxis("Horizontal") * .05f;
+            newPosition += transform.right * Input.GetAxis("Horizontal") * .02f;
         }
 
         if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2)
         {
-            newPosition += transform.forward * Input.GetAxis("Vertical") * .05f;
+            newPosition += transform.forward * Input.GetAxis("Vertical") * .02f;
         }
-
-        rb.MovePosition(newPosition);
-       // transform.position = newPosition;
+        float distanceFromCenter = Vector3.Distance(newPosition, inside.transform.position);
+        if ((distanceFromCenter > 3 && distanceFromCenter < 8.5f && transform.position.y < 0) || transform.position.y >= 0)
+            //rb.MovePosition(newPosition);
+            rb.transform.position = newPosition;
 
         if (Mathf.Abs(Input.GetAxis("H2")) > 0.2)
         {
